@@ -1,0 +1,17 @@
+{
+  "name": "memor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue": "^2.5.13",
+    "vuex": "^3.0.1",
+    "webpack": "^3.11.0"
+  }
+}

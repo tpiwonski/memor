@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}{% endblock styles %}
+    <!-- {% block state %}{% endblock state %} -->
+    {% for name, state in state.items %}
+    <script type="application/json" id="{{ name }}">
+        {{ state|safe }}
+    </script>
+    {% endfor %}
+    <script src="/static/dist/vue.js"></script>
+    <script src="/static/dist/vuex.js"></script>
+    <!-- <script src="https://unpkg.com/rxjs/bundles/Rx.min.js"></script> -->
+    <!-- <script>
+        var modules = [];
+        var appModule = null;
+        function application(module) {
+            appModule = module;
+        }
+        function module(module) {
+            modules.push(module);
+        }
+        document.addEventListener('DOMContentLoaded', function(e) {
+            //var m = modules.map(function(module) {
+            //    return module();
+            //});
+            //appModule(m);
+        });
+    </script> -->
+    <!-- <script src="/static/js/main.js" defer></script> -->
+    {% block scripts %}
+    <script src='/static/dist/application.js' defer></script>
+    {% endblock scripts %}
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li><a href="{% url 'add_note' %}">Add note</a></li>
+            <li><a href="{% url 'list_notes' %}">Notes</a></li>
+        </ul>
+    {% block content %}{% endblock content %}
+    </div>
+{% block templates %}{% endblock templates %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+
+{% block templates %}
+<template id="notes">
+{% verbatim %} 
+<ul>
+    <li v-for="note in notes">
+        <span>{{ note.text }}</span>
+        <span>{{ note.added_on }}</span>
+        <button v-on:click="deleteNote(note.id)">Delete</button>
+    </li>
+</ul>
+{% endverbatim %}
+</template>
+{% endblock templates %}

@@ -1,0 +1,16 @@
+{% extends "notes/note.html" %}
+
+{% block scripts %}
+<!-- {{ block.super }} -->
+<script src='/static/dist/list_notes.js' defer></script>
+{% endblock scripts %}
+
+{% block content %}
+<notes></notes>
+<counter></counter>
+{% endblock content %}
+
+{% block templates %}
+{{ block.super }}
+{% include "notes/counter.html" %}
+{% endblock templates %}
