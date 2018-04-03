@@ -6,7 +6,7 @@
 <ul>
     <li v-for="note in notes">
         <span>{{ note.text }}</span>
-        <span>{{ note.added_on }}</span>
+        <span>{{ note.created_on }}</span>
         <button v-on:click="deleteNote(note.id)">Delete</button>
     </li>
 </ul>

@@ -6,4 +6,4 @@ from memor.models.notes import Note
 class NoteSerializer(ModelSerializer):
     class Meta:
         model = Note
-        fields = ('id', 'text', 'added_on')
+        fields = ('id', 'text', 'created_on')

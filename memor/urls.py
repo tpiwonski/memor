@@ -14,6 +14,6 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('notes', NotesView.as_view(), name='list_notes'),
     path('notes/add', AddNoteView.as_view(), name='add_note'),
-    url(r'api/notes/(?P<note_id>[0-9]+){0,1}', NotesAPI.as_view(), name="api_notes")
+    url(r'api/notes/(?P<note_id>[0-9a-zA-Z\-]+){0,1}', NotesAPI.as_view(), name="api_notes")
     # url(r'^api', include(router.urls))
 ]

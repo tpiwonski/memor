@@ -4,6 +4,7 @@ from injector import inject
 
 from memor.models.notes import Note
 from memor.repositories.notes import NotesRepository
+from memor.models.reminders import Reminder
 
 
 class NotesService(object):
@@ -15,12 +16,15 @@ class NotesService(object):
     def create_note(self, text):
         note = Note(text=text, added_on=timezone.now())
         self.notes_repository.add_note(note)
+        return note
 
     def get_note_by_id(self, note_id):
         return self.notes_repository.get_note(note_id)
 
-    def add_note_reminder(self, note_id, reminder):
+    def add_note_reminder(self, note_id, remind_on):
+        reminder = Reminder(remind_on=remind_on)
         self.notes_repository.add_note_reminder(note_id, reminder)
+        return reminder
     
     def get_all_notes(self):
         return self.notes_repository.get_all()

@@ -1,4 +1,12 @@
 {
     "python.pythonPath": "C:\\Users\\tpiwo\\Projects\\memor\\env\\Scripts\\python.exe",
-    "python.linting.enabled": false
+    "python.linting.enabled": false,
+    "files.exclude": {
+        "env/": true,
+        "**/__pycache__": true,
+        "**/*.sqlite3": true,
+        "**/node_modules": true,
+        "**/.cache": true,
+        "**/dist": true
+    }
 }
